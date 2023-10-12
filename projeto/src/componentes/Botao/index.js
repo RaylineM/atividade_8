@@ -1,33 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-const TextAreaContainer = styled.div`
-margin: 0px 20px 20px 2px;
-`;
-const Label = styled.label`
-display: block;
-margin-bottom: 5px;
-color: #333;
-`;
-const TextArea = styled.textarea`
-width: 100%;
-padding: 10px;
-border: 1px solid #ccc;
+const StyledButton = styled.button`
+padding: 10px 20px;
+background-color: #00420C;
+color: white;
+border: none;
 border-radius: 4px;
-resize: vertical;
+cursor: pointer;
+transition: background-color 0.3s;
+&:hover{
+background-color: #0E6E1E;
+}
 `;
-export default function AreaDeTexto({ nomeLabel, nome, linhas, colunas,
-obrigatorio }) {
+export default function Botao({ tipo }) {
 return (
-<TextAreaContainer>
-<Label htmlFor={nome}>
-{nomeLabel}
-</Label>
-<TextArea
-name={nome}
-rows={linhas}
-cols={colunas}
-required={obrigatorio}
-/>
-</TextAreaContainer>
+<StyledButton type={tipo}>
+Enviar
+</StyledButton>
 );
 }
